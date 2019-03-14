@@ -3,9 +3,11 @@ from email.mime.text import MIMEText
 from email.header import Header
 
 f = open("/etc/shadowsocks.json", 'r+')
+i = 1
 for line in f:
-    print line
-    content = line
+    if i == 3:
+        content = line
+    i = i+1
 f.close()
 
 sender = 'from@banwagong.com'
