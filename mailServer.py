@@ -2,8 +2,10 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 
-f = open("/etc/shadowsocks.json", r+)
-content = f.readlines()
+f = open("/etc/shadowsocks.json", 'r+')
+for line in f:
+    print line
+    content = line
 f.close()
 
 sender = 'from@banwagong.com'
