@@ -2,11 +2,18 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 
+maxPort = 60000
 f = open("/etc/shadowsocks.json", 'r+')
 i = 1
 for line in f:
     if i == 3:
-        content = line
+        num = line.split(":")
+        num1 = num[1].split(",")
+        portNumber = int(num1[0])+1
+        if portNumber > maxPort:
+            portNumber = 5050
+
+        content = '"server_port":'+portNumber.toString()
     i = i+1
 f.close()
 
