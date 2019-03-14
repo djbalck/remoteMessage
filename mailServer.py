@@ -13,7 +13,7 @@ for line in f:
         if portNumber > maxPort:
             portNumber = 5050
 
-        content = '"server_port":'+portNumber.toString()
+        content = '"server_port":'+portNumber
     i = i+1
 f.close()
 
