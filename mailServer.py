@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 from email.header import Header
 
 sender = 'from@banwagong.com'
-receivers = ["zhangdejun@apusapps.com"]
+receivers = ["eagle_air@126.com"]
 
 message = MIMEText('This is a import message, very important!', 'plain', 'utf-8')
 message['From'] = Header("dj",'utf-8')
