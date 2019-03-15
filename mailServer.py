@@ -3,10 +3,14 @@ from email.mime.text import MIMEText
 from email.header import Header
 
 maxPort = 60000
-f = open("/etc/shadowsocks.json", 'r')
 i = 1
 content = ""
-for line in f:
+
+f = open("/etc/shadowsocks.json", 'r')
+lines = f.readlines()
+f.close()
+
+for line in lines:
     if i == 3:
         num = line.split(":")
         num1 = num[1].split(",")
@@ -15,21 +19,15 @@ for line in f:
             portNumber = 5050
         content = '"server_port":'+str(portNumber)+','
     i = i+1
-f.close()
 
 print content
-
-with open('/etc/shadowsocks.json', 'r') as f:
-    lines = f.readlines()   
-f.close()
-print lines
-
 
 with open('/etc/shadowsocks.json', 'w') as fw:
     for line in lines:
         if "server_port" in lines:
             line = content
-            print "line is "+line
+        print "line is "+line
+        
         fw.write(line)
 fw.close()
 
