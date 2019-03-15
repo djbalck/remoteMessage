@@ -20,9 +20,10 @@ f.close()
 print content
 
 with open('/etc/shadowsocks.json', 'r') as f:
-    lines = f.readlines()
-    print lines
+    lines = f.readlines()   
 f.close()
+print lines
+
 
 with open('/etc/shadowsocks.json', 'w') as fw:
     for line in lines:
