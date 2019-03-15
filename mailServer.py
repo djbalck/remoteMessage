@@ -22,13 +22,15 @@ print content
 with open('/etc/shadowsocks.json', 'r') as f:
     lines = f.readlines()
     print lines
-    
+f.close()
+
 with open('/etc/shadowsocks.json', 'w') as fw:
     for line in lines:
         if "server_port" in lines:
             line = content
             print "line is "+line
         fw.write(line)
+fw.close()
 
 
 
