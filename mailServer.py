@@ -24,7 +24,7 @@ print content
 
 with open('/etc/shadowsocks.json', 'w') as fw:
     for line in lines:
-        if "server_port" in lines:
+        if "server_port" in line:
             line = content
         print "line is "+line
         
