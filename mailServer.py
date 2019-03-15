@@ -17,7 +17,7 @@ for line in lines:
         portNumber = int(num1[0])+1
         if portNumber > maxPort:
             portNumber = 5050
-        content = '"server_port":'+str(portNumber)+','
+        content = '\t'+'"server_port":'+str(portNumber)+','+'\n'
     i = i+1
 
 print content
@@ -30,9 +30,6 @@ with open('/etc/shadowsocks.json', 'w') as fw:
         
         fw.write(line)
 fw.close()
-
-
-
 
 sender = 'from@banwagong.com'
 receivers = ["eagle_air@126.com"]
